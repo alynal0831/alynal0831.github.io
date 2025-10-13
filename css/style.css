@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f7f7fa;
+    color: #222;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0 20px 0;
+    background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
+    color: #fff;
+}
+
+.profile-img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 12px #fff, 0 8px 32px 0 rgba(108, 92, 231, 0.3), 0 1.5px 8px 0 rgba(252, 92, 125, 0.2);
+    margin-bottom: 24px;
+    transition: box-shadow 0.3s;
+}
+.profile-img:hover {
+    box-shadow: 0 0 0 16px #fc5c7d, 0 12px 40px 0 rgba(108, 92, 231, 0.4);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 0 0 10px 0;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 0 0 24px 0;
+    font-weight: 400;
+}
+
+.assignments {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    padding: 40px 0;
+}
+.assignment-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(108, 92, 231, 0.08);
+    width: 220px;
+    text-align: center;
+    padding: 24px 16px;
+    transition: box-shadow 0.2s, transform 0.2s;
+    text-decoration: none;
+    color: #222;
+}
+.assignment-card:hover {
+    box-shadow: 0 4px 24px rgba(252, 92, 125, 0.18);
+    transform: translateY(-4px) scale(1.03);
+    color: #6a82fb;
+}
+.assignment-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.2rem;
+    color: #6a82fb;
+}
+.assignment-card p {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+@media (max-width: 700px) {
+    .assignments {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .assignment-card {
+        width: 90vw;
+        max-width: 320px;
+    }
+    .header {
+        padding: 24px 0 12px 0;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+}
