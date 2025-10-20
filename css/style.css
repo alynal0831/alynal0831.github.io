@@ -1,92 +1,205 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --background-color: #f8f9fa;
+    --card-background: #ffffff;
+    --text-primary: #2c3e50;
+    --text-secondary: #6c757d;
+    --spacing-unit: 1rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f7f7fa;
-    color: #222;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--background-color);
 }
 
-.header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 0 20px 0;
-    background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
-    color: #fff;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-unit);
 }
 
-.profile-img {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 0 0 12px #fff, 0 8px 32px 0 rgba(108, 92, 231, 0.3), 0 1.5px 8px 0 rgba(252, 92, 125, 0.2);
-    margin-bottom: 24px;
-    transition: box-shadow 0.3s;
-}
-.profile-img:hover {
-    box-shadow: 0 0 0 16px #fc5c7d, 0 12px 40px 0 rgba(108, 92, 231, 0.4);
-}
-
-h1 {
-    font-size: 2.5rem;
-    margin: 0 0 10px 0;
-}
-
-h2 {
-    font-size: 1.5rem;
-    margin: 0 0 24px 0;
-    font-weight: 400;
-}
-
-.assignments {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 32px;
-    padding: 40px 0;
-}
-.assignment-card {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 2px 12px rgba(108, 92, 231, 0.08);
-    width: 220px;
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
     text-align: center;
-    padding: 24px 16px;
-    transition: box-shadow 0.2s, transform 0.2s;
-    text-decoration: none;
-    color: #222;
-}
-.assignment-card:hover {
-    box-shadow: 0 4px 24px rgba(252, 92, 125, 0.18);
-    transform: translateY(-4px) scale(1.03);
-    color: #6a82fb;
-}
-.assignment-card h3 {
-    margin: 0 0 8px 0;
-    font-size: 1.2rem;
-    color: #6a82fb;
-}
-.assignment-card p {
-    margin: 0;
-    font-size: 1rem;
-    color: #555;
+    padding: calc(var(--spacing-unit) * 4) var(--spacing-unit);
+    margin-bottom: calc(var(--spacing-unit) * 3);
 }
 
-@media (max-width: 700px) {
-    .assignments {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
+.profile-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 4px solid white;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-unit);
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Section Styles */
+.section {
+    margin-bottom: calc(var(--spacing-unit) * 4);
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: calc(var(--spacing-unit) * 2);
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: calc(var(--spacing-unit) * 0.5) auto;
+    border-radius: 2px;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: calc(var(--spacing-unit) * 2);
+    margin-bottom: calc(var(--spacing-unit) * 3);
+}
+
+.skill-card {
+    background: var(--card-background);
+    padding: calc(var(--spacing-unit) * 2);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-card h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-unit);
+    font-size: 1.25rem;
+}
+
+/* Assignments Grid */
+.assignments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: calc(var(--spacing-unit) * 2);
+}
+
+.assignment-card {
+    background: var(--card-background);
+    padding: calc(var(--spacing-unit) * 2);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.assignment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.assignment-card h3 {
+    color: var(--primary-color);
+    margin-bottom: calc(var(--spacing-unit) * 0.5);
+    font-size: 1.25rem;
+}
+
+.assignment-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Resume Section */
+.resume {
+    background: var(--card-background);
+    padding: calc(var(--spacing-unit) * 3);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.resume-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: calc(var(--spacing-unit) * 3);
+}
+
+.resume h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-unit);
+    font-size: 1.25rem;
+}
+
+.resume p {
+    color: var(--text-secondary);
+    margin-bottom: calc(var(--spacing-unit) * 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    :root {
+        --spacing-unit: 0.875rem;
     }
-    .assignment-card {
-        width: 90vw;
-        max-width: 320px;
+
+    .container {
+        padding: 0 var(--spacing-unit);
     }
-    .header {
-        padding: 24px 0 12px 0;
+
+    .hero {
+        padding: calc(var(--spacing-unit) * 3) var(--spacing-unit);
     }
-    h1 {
+
+    .profile-image {
+        width: 140px;
+        height: 140px;
+    }
+
+    .hero h1 {
         font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .skills-grid,
+    .assignments-grid {
+        gap: var(--spacing-unit);
+    }
+
+    .resume {
+        padding: calc(var(--spacing-unit) * 2);
     }
 }

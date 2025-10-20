@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 15 - HTML5 Tip</title>
+    <style>
+        :root {
+            --gradient: linear-gradient(135deg, #0891b2 0%, #2dd4bf 100%);
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8fafc;
+            padding: 2rem;
+        }
+        
+        .tip-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tip-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient);
+            opacity: 0.05;
+            mask: 
+                radial-gradient(circle at 20% 20%, black 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, black 0%, transparent 50%);
+            -webkit-mask:
+                radial-gradient(circle at 20% 20%, black 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, black 0%, transparent 50%);
+        }
+        
+        .tip-content, h1 {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            margin: 0 0 1.5rem 0;
+            background: var(--gradient);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2rem;
+        }
+        
+        .tip-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #1e293b;
+        }
+        
+        code {
+            background: #f1f5f9;
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        
+        .example {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="tip-card">
+        <h1>HTML5 Lazy Loading</h1>
+        <p class="tip-content">
+            Use the <code>loading</code> attribute to defer loading of images and iframes:
+        </p>
+        <div class="example">
+            <code>&lt;img src="image.jpg" loading="lazy" alt="..."&gt;</code>
+            <br>
+            <code>&lt;iframe src="..." loading="lazy"&gt;&lt;/iframe&gt;</code>
+        </div>
+    </div>
+</body>
+</html>
